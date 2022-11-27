@@ -6,7 +6,6 @@ import pytest
 
 link_main = "http://selenium1py.pythonanywhere.com/"
 
-@pytest.mark.skip
 @pytest.mark.login_guest
 class TestLoginFromMainPage():
     def test_guest_can_go_to_login_page(self, browser):
@@ -21,7 +20,6 @@ class TestLoginFromMainPage():
         page.open()
         page.should_be_login_link()
 
-@pytest.mark.skip
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     page = BasePage(browser, link_main)
     page.open()
@@ -29,8 +27,6 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     basket_page = BasketPage(browser, link_main)
     basket_page.should_not_have_products()
     basket_page.should_be_empty_message_en()
-    # basket_page.should_have_products()
-    # basket_page.should_not_be_empty_message_en()
     # Гость открывает главную страницу
     # Переходит в корзину по кнопке в шапке сайта
     # Ожидаем, что в корзине нет товаров

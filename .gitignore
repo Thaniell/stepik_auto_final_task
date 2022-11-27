@@ -2,7 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-test_product_page_fast_check.py
 
 # C extensions
 *.so
